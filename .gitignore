@@ -1,6 +1,8 @@
-.next/
-node_modules/
-.cache/
-out/
-dist/
+node_modules
+.next
 .env
+.env.local
+.env.production
+dist
+out
+.cache
