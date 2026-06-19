@@ -1,0 +1,346 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  CLIENT
+  FREELANCER
+  SELLER
+  ADMIN
+  EDITOR
+  SUPPORT
+}
+
+enum VerificationStatus {
+  PENDING
+  VERIFIED
+  REJECTED
+}
+
+enum ProjectStatus {
+  OPEN
+  REVIEWING
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum ProductType {
+  TEMPLATE
+  PRESET
+  UI_KIT
+  EBOOK
+  PLUGIN
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  FAILED
+  REFUNDED
+}
+
+enum MessageType {
+  PROJECT
+  SUPPORT
+  CEO
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  passwordHash  String?
+  roles         Role[]    @default([CLIENT])
+  locale        String    @default("en")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts      Account[]
+  sessions      Session[]
+  profile       Profile?
+  products      Product[]      @relation("SellerProducts")
+  posts         BlogPost[]
+  projects      Project[]      @relation("ClientProjects")
+  proposals     Proposal[]
+  orders        Order[]
+  messages      Message[]
+  notifications Notification[]
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Profile {
+  id                 String             @id @default(cuid())
+  userId             String             @unique
+  headline           String?
+  bio                String?
+  phone              String?
+  country            String?
+  skills             String[]
+  portfolioUrls      String[]
+  experienceLevel    String?
+  verificationStatus VerificationStatus @default(PENDING)
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+  user               User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model ProjectRequest {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  phone       String?
+  budgetRange String
+  projectType String
+  subCategory String?
+  description String
+  deadline    DateTime?
+  status      String   @default("new")
+  createdAt   DateTime @default(now())
+}
+
+model Project {
+  id          String        @id @default(cuid())
+  title       String
+  slug        String        @unique
+  description String
+  budget      Int?
+  deadline    DateTime?
+  status      ProjectStatus @default(OPEN)
+  clientId    String
+  client      User          @relation("ClientProjects", fields: [clientId], references: [id])
+  proposals   Proposal[]
+  room        Conversation?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+}
+
+model Proposal {
+  id           String   @id @default(cuid())
+  projectId    String
+  freelancerId String
+  amount       Int
+  timeline     String
+  coverLetter  String
+  status       String   @default("submitted")
+  createdAt    DateTime @default(now())
+  project      Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  freelancer   User     @relation(fields: [freelancerId], references: [id])
+}
+
+model Product {
+  id          String      @id @default(cuid())
+  sellerId    String
+  title       String
+  titleI18n   Json?
+  slug        String      @unique
+  type        ProductType
+  category    String
+  categoryI18n Json?
+  description String
+  descriptionI18n Json?
+  price       Int
+  previewUrl  String?
+  fileUrl     String?
+  isPublished Boolean     @default(false)
+  seller      User        @relation("SellerProducts", fields: [sellerId], references: [id])
+  reviews     Review[]
+  orderItems  OrderItem[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  productId String
+  rating    Int
+  body      String
+  author    String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
+
+model Order {
+  id        String      @id @default(cuid())
+  buyerId   String
+  status    OrderStatus @default(PENDING)
+  total     Int
+  buyer     User        @relation(fields: [buyerId], references: [id])
+  items     OrderItem[]
+  createdAt DateTime    @default(now())
+}
+
+model OrderItem {
+  id        String  @id @default(cuid())
+  orderId   String
+  productId String
+  price     Int
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product   Product @relation(fields: [productId], references: [id])
+}
+
+model BlogPost {
+  id          String    @id @default(cuid())
+  authorId    String
+  title       String
+  titleI18n   Json?
+  slug        String    @unique
+  excerpt     String
+  excerptI18n Json?
+  content     String
+  contentI18n Json?
+  coverUrl    String?
+  categories  String[]
+  tags        String[]
+  publishedAt DateTime?
+  author      User      @relation(fields: [authorId], references: [id])
+  comments    Comment[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  postId    String
+  author    String
+  body      String
+  approved  Boolean  @default(false)
+  post      BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
+
+model Conversation {
+  id        String    @id @default(cuid())
+  type      MessageType
+  projectId String?   @unique
+  project   Project?  @relation(fields: [projectId], references: [id])
+  messages  Message[]
+  createdAt DateTime  @default(now())
+}
+
+model Message {
+  id             String       @id @default(cuid())
+  conversationId String
+  senderId       String
+  body           String
+  readAt         DateTime?
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  sender         User         @relation(fields: [senderId], references: [id])
+  createdAt      DateTime     @default(now())
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  title     String
+  body      String
+  href      String?
+  readAt    DateTime?
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
+
+model InternalProject {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  nameI18n    Json?
+  slug        String   @unique
+  description String
+  descriptionI18n Json?
+  status      String
+  statusI18n  Json?
+  progress    Int
+  roadmap     String[]
+  mediaUrls   String[]
+  createdAt   DateTime @default(now())
+}
+
+model Brand {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  nameI18n    Json?
+  description String
+  descriptionI18n Json?
+  websiteUrl  String?
+  status      String
+  statusI18n  Json?
+  createdAt   DateTime @default(now())
+}
+
+model PortfolioItem {
+  id              String   @id @default(cuid())
+  title           String
+  titleI18n       Json
+  slug            String   @unique
+  description     String
+  descriptionI18n Json
+  category        String
+  categoryI18n    Json
+  tags            String[]
+  tools           String[]
+  clientName      String?
+  mediaUrls       String[]
+  isPublished     Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model EmailTemplate {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  subjectI18n Json
+  bodyI18n    Json
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model LeadMessage {
+  id          String      @id @default(cuid())
+  type        MessageType
+  priority    String
+  name        String
+  email       String
+  phone       String?
+  body        String
+  createdAt   DateTime    @default(now())
+}

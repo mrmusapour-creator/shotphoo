@@ -1,0 +1,289 @@
+{
+  "brand": {
+    "name": "SHOTPHOO",
+    "tagline": "Premium creative SaaS ecosystem",
+    "footer": "© 2026 SHOTPHOO. Creative ecosystem, marketplace, and agency operating system."
+  },
+  "nav": {
+    "portfolio": "Portfolio",
+    "services": "Services",
+    "marketplace": "Marketplace",
+    "freelance": "Freelance",
+    "messages": "Messages",
+    "projects": "Projects",
+    "admin": "Admin",
+    "ceo": "CEO Contact",
+    "join": "Join",
+    "blog": "Blog",
+    "start": "Start"
+  },
+  "seo": {
+    "homeTitle": "Luxury Creative SaaS Platform",
+    "homeDescription": "SHOTPHOO combines agency services, marketplace products, freelance talent, project intake, and admin operations.",
+    "servicesTitle": "Services",
+    "servicesDescription": "SEO-ready service landing pages for web development, branding, content, social media, and AI automation.",
+    "portfolioTitle": "Portfolio",
+    "portfolioDescription": "Logo design, photography, web design, branding, and content creation portfolio.",
+    "marketplaceTitle": "Digital Products Marketplace",
+    "marketplaceDescription": "Browse templates, presets, UI kits, ebooks, plugins, reviews, cart, checkout, and downloads.",
+    "adminTitle": "Admin Dashboard",
+    "adminDescription": "Manage users, projects, products, blog posts, requests, messages, sales, leads, and analytics."
+  },
+  "home": {
+    "eyebrow": "Agency + Marketplace + Talent Cloud",
+    "title": "SHOTPHOO builds premium digital ecosystems.",
+    "body": "A multilingual platform for clients, freelancers, sellers, editors, and operators to launch brands, products, campaigns, and software with one cinematic operating system.",
+    "startProject": "Start Project",
+    "hireFreelancer": "Hire Freelancer",
+    "sellProducts": "Sell Digital Products",
+    "servicesEyebrow": "Services",
+    "servicesTitle": "Built like a luxury agency. Operated like SaaS.",
+    "servicesBody": "Every service page is structured for SEO, conversion, packages, FAQs, and project intake.",
+    "portfolioEyebrow": "Portfolio",
+    "portfolioTitle": "Signals of taste across craft categories.",
+    "commerceEyebrow": "Commerce",
+    "commerceTitle": "Digital products with seller workflows.",
+    "commerceBody": "Templates, presets, UI kits, ebooks, plugins, reviews, downloads, cart, checkout, and order history.",
+    "opsEyebrow": "Operating System",
+    "opsTitle": "One platform for the whole creative company.",
+    "developmentEyebrow": "In Development",
+    "developmentTitle": "Internal ventures moving through the studio."
+  },
+  "stats": [
+    { "value": "128+", "label": "Projects" },
+    { "value": "74", "label": "Freelancers" },
+    { "value": "41", "label": "Clients" },
+    { "value": "12", "label": "Launch systems" }
+  ],
+  "services": {
+    "pageEyebrow": "Services",
+    "pageTitle": "Premium production lines for serious launches.",
+    "landingEyebrow": "Service Landing Page",
+    "included": "What is included",
+    "includedItems": [
+      "Technical discovery, positioning, roadmap, and launch architecture.",
+      "Conversion-focused UI, content SEO, structured metadata, and analytics plan.",
+      "Production workflow, QA checklist, documentation, and post-launch support."
+    ],
+    "request": "Request this service",
+    "view": "View landing page",
+    "package": "Package",
+    "packageBody": "Ideal for teams that need a clear scope, commercial polish, and a measurable launch path.",
+    "faq": "FAQ",
+    "faqBody": "Timeline, assets, collaboration rhythm, payment milestones, and ownership are clarified during discovery.",
+    "items": [
+      { "slug": "web-development", "title": "Web Development", "summary": "High-conversion websites, SaaS dashboards, commerce systems, and automation-ready apps.", "packages": ["Launch", "Scale", "Enterprise"] },
+      { "slug": "branding", "title": "Branding", "summary": "Identity systems, naming, visual language, premium guidelines, and launch assets.", "packages": ["Identity", "Signature", "House of Brands"] },
+      { "slug": "social-media", "title": "Social Media Management", "summary": "Editorial strategy, campaign systems, analytics, and premium community presence.", "packages": ["Starter", "Growth", "Authority"] },
+      { "slug": "content-production", "title": "Content Production", "summary": "Photography, short-form video, motion assets, copywriting, and launch storytelling.", "packages": ["Studio Day", "Campaign", "Retainer"] },
+      { "slug": "ai-automation", "title": "AI Automation Services", "summary": "Internal copilots, lead routers, workflow agents, reporting systems, and AI support desks.", "packages": ["Prototype", "Workflow", "Operating System"] }
+    ]
+  },
+  "portfolio": {
+    "eyebrow": "Portfolio",
+    "title": "Category-filtered work library.",
+    "body": "The production version can hydrate these cards from Prisma and filter server-side or client-side.",
+    "tools": "Tools used",
+    "client": "Client",
+    "items": [
+      { "title": "Velvet Mark", "description": "Luxury logo system for a beauty launch.", "category": "Logo Design", "tools": "Illustrator, Figma", "client": "Reyhan Banoo", "tags": ["Luxury", "Identity"] },
+      { "title": "Owl Editorial", "description": "Content system for a digital magazine.", "category": "Content Creation", "tools": "Premiere, Notion", "client": "Owl Magazine", "tags": ["Editorial", "Media"] },
+      { "title": "Rozatia Commerce", "description": "Commerce interface for a startup ecosystem.", "category": "Web Design", "tools": "Next.js, Prisma", "client": "Rozatia", "tags": ["Commerce", "SaaS"] },
+      { "title": "Noir Frames", "description": "Cinematic photography direction.", "category": "Photography", "tools": "Lightroom, Capture One", "client": "Ben Musa", "tags": ["Studio", "Photo"] },
+      { "title": "ShadowQuest Kit", "description": "Brand kit for an interactive game concept.", "category": "Branding", "tools": "Figma, Blender", "client": "ShadowQuest", "tags": ["Game", "Brand"] }
+    ]
+  },
+  "marketplace": {
+    "eyebrow": "Marketplace",
+    "title": "Premium digital products, seller-ready.",
+    "cart": "Cart",
+    "downloads": "Downloads",
+    "add": "Add",
+    "reviews": "reviews",
+    "unlock": "Download unlocks after purchase.",
+    "pricePrefix": "$",
+    "items": [
+      { "title": "Luxury Agency UI Kit", "type": "UI Kit", "category": "Templates", "price": "79" },
+      { "title": "Creator Preset Vault", "type": "Preset", "category": "Photography", "price": "29" },
+      { "title": "Marketplace Launch Pack", "type": "Template", "category": "Commerce", "price": "119" },
+      { "title": "Brand Strategy Ebook", "type": "Ebook", "category": "Branding", "price": "19" }
+    ]
+  },
+  "admin": {
+    "eyebrow": "Admin",
+    "title": "Command center for the creative ecosystem.",
+    "today": "Today",
+    "cards": [
+      { "title": "Users", "body": "Approve clients, freelancers, sellers, editors, support, and admin roles." },
+      { "title": "Project requests", "body": "Review intake submissions, assign owners, and convert leads into projects." },
+      { "title": "Products", "body": "Approve marketplace assets, downloads, pricing, reviews, and seller quality." },
+      { "title": "Messages", "body": "Monitor support queues, project rooms, CEO inquiries, and notifications." },
+      { "title": "Analytics", "body": "Track traffic, leads, conversion, sales, project velocity, and marketplace revenue." },
+      { "title": "Approvals", "body": "Control verification, featured work, blog publishing, and internal project status." }
+    ],
+    "metrics": [
+      { "value": "24", "label": "New leads" },
+      { "value": "$18.4k", "label": "Marketplace sales" },
+      { "value": "11", "label": "Open projects" },
+      { "value": "7", "label": "Pending verifications" }
+    ]
+  },
+  "forms": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "budget": "Budget range",
+    "projectType": "Project type",
+    "subCategory": "Sub-category",
+    "deadline": "Deadline",
+    "description": "Project description",
+    "submitRequest": "Submit request",
+    "messageType": "Message type",
+    "priority": "Priority",
+    "message": "Message",
+    "sendInquiry": "Send inquiry",
+    "normal": "Normal",
+    "high": "High",
+    "urgent": "Urgent"
+  },
+  "request": {
+    "eyebrow": "Smart Intake",
+    "title": "Tell SHOTPHOO what you want to build.",
+    "body": "Submissions are validated and saved through the project request API for admin review.",
+    "placeholder": "SaaS, beauty, editorial, launch campaign...",
+    "descriptionPlaceholder": "Goals, audience, examples, constraints, success metrics...",
+    "types": ["Website", "E-commerce", "Branding", "Content", "Other"],
+    "budgets": ["$1k - $5k", "$5k - $15k", "$15k - $50k", "$50k+"]
+  },
+  "join": {
+    "eyebrow": "Careers and Talent",
+    "title": "Choose your path into the ecosystem.",
+    "create": "Create profile",
+    "path": "Path",
+    "experience": "Experience level",
+    "skills": "Skills",
+    "portfolioUrl": "Portfolio URL",
+    "bio": "Bio",
+    "skillsPlaceholder": "Figma, Next.js, photography...",
+    "paths": [
+      { "title": "Freelancer Registration", "body": "Create a talent profile, skills list, portfolio, experience level, and verification status." },
+      { "title": "Seller Registration", "body": "Publish templates, presets, UI kits, ebooks, plugins, reviews, and download products." },
+      { "title": "Job Application", "body": "Apply for internal agency roles, creative production, support, editorial, and engineering." }
+    ],
+    "levels": ["Junior", "Mid-level", "Senior", "Lead"]
+  },
+  "freelance": {
+    "eyebrow": "Freelance Marketplace",
+    "title": "Project board, proposals, chat, and delivery states.",
+    "apply": "Apply",
+    "message": "Message",
+    "statusTitle": "Status tracking",
+    "statusBody": "Projects move through open, in progress, completed, cancelled, with proposal and conversation records connected in Prisma.",
+    "projects": [
+      { "title": "Commerce rebuild for beauty brand", "budget": "$8k - $14k", "status": "Open" },
+      { "title": "Magazine editorial design system", "budget": "$3k - $6k", "status": "Reviewing" },
+      { "title": "AI lead routing workflow", "budget": "$5k - $12k", "status": "Open" }
+    ]
+  },
+  "proposal": {
+    "back": "Back to projects",
+    "eyebrow": "Proposal",
+    "title": "Send a project proposal.",
+    "body": "Set your price, timeline, cover letter, and portfolio so the client can review your offer.",
+    "amount": "Proposal amount",
+    "timeline": "Delivery timeline",
+    "timelinePlaceholder": "e.g. 21 days",
+    "portfolio": "Portfolio link",
+    "attachment": "Attachment",
+    "coverLetter": "Cover letter",
+    "coverPlaceholder": "Explain your approach, milestones, deliverables, and why you are the right fit.",
+    "submit": "Submit proposal",
+    "priceHelp": "Offer a clear fixed price or milestone budget.",
+    "timelineHelp": "Describe your delivery schedule and review rounds.",
+    "fileHelp": "Attach a relevant portfolio sample or proposal PDF."
+  },
+  "blog": {
+    "eyebrow": "Insights",
+    "title": "SEO content engine for the agency.",
+    "meta": "Strategy · SaaS · Branding",
+    "body": "Author, comments, related posts, schema, tags, and newsletter capture are modeled.",
+    "posts": ["How premium brands launch faster", "A founder guide to marketplace SEO", "AI automations that remove admin drag"]
+  },
+  "development": {
+    "eyebrow": "Venture Studio",
+    "title": "Projects in development.",
+    "roadmap": "Roadmap: discovery, prototype, launch assets, public beta, growth system.",
+    "items": [
+      { "name": "Shotphoo Core Studio", "status": "Core platform", "progress": 88 },
+      { "name": "Reyhan Banoo", "status": "Beauty brand", "progress": 72 },
+      { "name": "Owl Magazine", "status": "Editorial media", "progress": 64 },
+      { "name": "Ben Musa", "status": "Product studio", "progress": 48 },
+      { "name": "ShadowQuest", "status": "Game concept", "progress": 35 },
+      { "name": "Rozatia ecosystem", "status": "Startup network", "progress": 81 }
+    ]
+  },
+  "ecosystem": {
+    "eyebrow": "Ecosystem",
+    "title": "Linked brands and startup properties.",
+    "website": "Website",
+    "items": [
+      { "name": "Rozatia", "status": "Active", "body": "The broader startup ecosystem connected to SHOTPHOO." },
+      { "name": "Linked startups", "status": "In development", "body": "Future brands, products, and venture studio experiments." }
+    ]
+  },
+  "ceo": {
+    "eyebrow": "Direct Line",
+    "title": "Send a priority inquiry to the CEO."
+  },
+  "cart": {
+    "eyebrow": "Cart",
+    "title": "Checkout-ready commerce flow.",
+    "body": "Wire this page to Stripe Checkout or a regional payment provider while preserving the Order and OrderItem models.",
+    "checkout": "Proceed to checkout",
+    "subtotal": "Subtotal",
+    "tax": "Estimated tax",
+    "total": "Total",
+    "secure": "Secure digital delivery after payment."
+  },
+  "checkout": {
+    "eyebrow": "Checkout",
+    "title": "Complete your digital order.",
+    "body": "This screen is Stripe-ready and can be connected to any payment provider before launch.",
+    "billing": "Billing details",
+    "payment": "Payment method",
+    "card": "Card payment",
+    "wallet": "Digital wallet",
+    "placeOrder": "Place order",
+    "mockNotice": "Demo checkout: no real payment is charged."
+  },
+  "messages": {
+    "eyebrow": "Messaging",
+    "title": "Project chat, support, and notifications.",
+    "body": "Client and freelancer conversations, admin support, message history, and read states are modeled for real-time upgrades.",
+    "compose": "Write a message",
+    "send": "Send",
+    "support": "Admin support",
+    "projectRoom": "Project room",
+    "notification": "Notification center",
+    "placeholder": "Type your message...",
+    "threads": [
+      { "title": "Commerce rebuild", "body": "Proposal accepted. Please share brand assets and product catalog." },
+      { "title": "Admin support", "body": "Your seller verification is under review." },
+      { "title": "Design delivery", "body": "The first UI kit preview is ready for feedback." }
+    ]
+  },
+  "downloads": {
+    "eyebrow": "Dashboard",
+    "title": "Purchased downloads.",
+    "download": "Download",
+    "items": ["Luxury Agency UI Kit", "Creator Preset Vault"]
+  },
+  "opsCards": [
+    { "title": "Role-based portals", "body": "Clients, freelancers, sellers, editors, support, and admins each get focused dashboards." },
+    { "title": "Messaging and notifications", "body": "Project rooms, admin support chat, read states, and notification primitives are modeled." },
+    { "title": "Secure by design", "body": "Credential auth, Prisma adapter, JWT sessions, RBAC helpers, and upload provider boundaries." },
+    { "title": "Smart intake", "body": "Project requests capture budget, type, dynamic category, description, deadline, and admin review status." },
+    { "title": "Ecosystem brands", "body": "Rozatia and linked startups are represented with statuses, links, progress, roadmap, and media." },
+    { "title": "Admin analytics", "body": "Traffic, sales, leads, users, products, messages, and project pipeline surfaces are ready." }
+  ]
+}
