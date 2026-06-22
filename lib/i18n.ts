@@ -3,7 +3,7 @@ export type Locale = (typeof locales)[number];
 
 export const localeMeta: Record<Locale, { label: string; dir: "ltr" | "rtl"; name: string }> = {
   en: { label: "EN", dir: "ltr", name: "English" },
-  fa: { label: "FA", dir: "rtl", name: "فارسی" },
+  fa: { label: "FA", dir: "rtl", name: "پارسی" },
   ar: { label: "AR", dir: "rtl", name: "العربية" }
 };
 
