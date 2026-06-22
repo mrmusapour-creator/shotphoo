@@ -34,7 +34,7 @@ export function organizationJsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "SHOTPHOO",
-    url: "https://shotphoo.com",
+    url: "https://shotphoo.shop",
     sameAs: ["https://rozatia.com"],
     brand: ["Rozatia", "Owl Magazine", "Reyhan Banoo"]
   };
